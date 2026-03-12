@@ -151,10 +151,6 @@ PDF version can be found [here](output/NYCWaterAnalysisPowerBIDashboard.pdf)
 * **MySQL:** Data cleaning and analytical queries.
 * **Power BI + DAX:** Four-page interactive dashboard showing consumption trends, billing anomalies, revenue & rate and exploration by development. DAX measures to show rate
 
-
-## Repository Structure
-
-
 ## How To Run
 1. Download the NYCHA Water Consumption dataset from NYC Open Data and import into MySQL
 2. Run [NYCWaterCleaning.sql](code/NYCWaterCleaning.sql) to create the waterconsumption table
