@@ -126,27 +126,27 @@ FHA: not based on geographic borough, contained hundreds of developments with no
 
 ## DASHBOARD
 
-Consumption Trends - Total consumption, active meters, and consumption per meter by borough. 
+* Consumption Trends - Total consumption, active meters, and consumption per meter by borough. 
 
 
 
 
-Billing Anomalies - Estimated vs. actual rate comparison, high charge events, excess charge by development
+* Billing Anomalies - Estimated vs. actual rate comparison, high charge events, excess charge by development
 
 
 
-Revenue & Rates - Water revenue trends, rate per consumption over time with a snapshot comparison of 2014, 2019, 2023 
+* Revenue & Rates - Water revenue trends, rate per consumption over time with a snapshot comparison of 2014, 2019, 2023 
 
 
 
-Consumption by Development - Select developments specifically to see more information on bill history, meter count and rate over time
+* Consumption by Development - Select developments specifically to see more information on bill history, meter count and rate over time
 
 
 
 ## Tools
 
-MySQL: Data cleaning and analytical queries.
-Power BI + DAX: Four-page interactive dashboard showing consumption trends, billing anomalies, revenue & rate and exploration by development. DAX measures to show rate
+*MySQL: Data cleaning and analytical queries.
+*Power BI + DAX: Four-page interactive dashboard showing consumption trends, billing anomalies, revenue & rate and exploration by development. DAX measures to show rate
 
 ## Repository Structure
 
