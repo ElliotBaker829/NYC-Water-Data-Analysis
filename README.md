@@ -39,6 +39,7 @@ CASE
 END
 ```
 A finished table was created, taking more care to correctly identify data types for each column. The staging data was inserted into the new table, with dates or integers being converted from strings at this time. Unnecessary columns (Numdays that could be calculated from existing columns but contained incorrectly calculated values) were removed, and new columns were added (splitting dates into year and month). One such created column was the data flag column, which flagged acceptable values as ‘OK’ and raised errors, such as invalid dates or billing exceptions that were raised in the original data. 
+
 ```SQL
 CASE
    WHEN ServiceStartDate > '2026-12-31' OR ServiceEndDate < '2008-01-01' THEN 'Invalid date'
@@ -111,8 +112,7 @@ ORDER BY Borough, RevenueYear;
 
 ## Dataset
 
-The data used is the NYCHA Water Consumption dataset from NYC Open Data, covering January 2023 to May 2025.
-
+The data used is the NYCHA Water Consumption dataset from NYC Open Data, covering January 2023 to May 2025, it can be found [here](data/Water_Consumption_And_Cost_(2013_-_May_2025)_20260312.csv)
 
 
 ### Excluded: 
@@ -125,6 +125,8 @@ FHA: not based on geographic borough, contained hundreds of developments with no
 
 
 ## DASHBOARD
+
+PDF version can be found [here](output/NYCWaterAnalysisPowerBIDashboard.pdf)
 
 * Consumption Trends - Total consumption, active meters, and consumption per meter by borough. 
 
@@ -151,11 +153,13 @@ FHA: not based on geographic borough, contained hundreds of developments with no
 ## Repository Structure
 
 ## How To Run
-Download the NYCHA Water Consumption dataset from NYC Open Data and import into MySQL
-Run NYCWaterCleaning.sql to create the waterconsumption table
-Run NYCWaterRevenueAnalysis.sql and NYCWaterConsumptionAnalysis.sql to check for trends
+1. Download the NYCHA Water Consumption dataset from NYC Open Data and import into MySQL
+2. Run [NYCWaterCleaning.sql](code/NYCWaterCleaning.sql) to create the waterconsumption table
+3. Run [NYCWaterRevenueAnalysis.sql](code/NYCWaterRevenueAnalysis.sql) and [NYCWaterConsumptionAnalysis.sql](code/NYCWaterConsumptionAnalysis.sql) to check for trends
 
 ## Findings
+
+One page analysis can be found [here](output/NYCWaterAnalysisOnePageReport.pdf)
 
 ### Estimated billing of up to 47x the actual rate
 
