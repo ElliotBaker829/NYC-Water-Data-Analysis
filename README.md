@@ -1,23 +1,23 @@
 # NYC-Water-Data-Analysis
 Cleaning and analysing the NYCHA Open Water Data, analyzing problems with the dataset, and trends in revenue and consumption. 
 
-##Project Background
+## Project Background
 
 NYC tracks water consumption and cost data from January 2013 to May 2025, covering all five boroughs of New York (Bronx, Brooklyn, Queens, Manhattan, Staten Island). This data breaks down use by specific development and individual meter locations. This project aims to establish estimated vs. actual meter reading accuracy, as well as consumption and revenue trends.
 
 The analysis identified two primary areas of concern: revenue anomalies caused by inaccurate estimated bills and a consumption decline that varies depending on the per-meter control. These findings align with a 2024 meter rollout by the NYCHA.
 Analysis was performed on the following topics, by borough, development, and throughout the years. 
 
-*Consumption
-*Revenue
-*Active meters
-*Water rates per consumption 
-*Estimated vs actual meter readings 
+* Consumption
+* Revenue
+* Active meters
+* Water rates per consumption 
+* Estimated vs actual meter readings 
 
 
-##Process
+## Process
 
-###Cleaning 
+### Cleaning 
 
 When the data was imported, a raw table was created with VARCHAR(50) and manually checked for mapping to ensure all columns were imported correctly.
 A staging table was used before the data was imported into a new table.
@@ -50,7 +50,7 @@ CASE
 END
 ```
 
-###Analysis
+### Analysis
 
 Analysis focused on revenue and consumption, trying to find trends. Total revenue by borough and year was looked at. A noticeable jump was observed in 2021 across all boroughs. Further inspection revealed this was caused by an increase in annual fixed-charge rows (Bills that covered 334-365 days). From this, it was decided to further separate the data into monthly and annual billing, as this distorted trends. 
 ```SQL
@@ -109,13 +109,13 @@ GROUP BY Borough, RevenueYear
 ORDER BY Borough, RevenueYear;
 ```
 
-##Dataset
+## Dataset
 
 The data used is the NYCHA Water Consumption dataset from NYC Open Data, covering January 2023 to May 2025.
 
 
 
-###Excluded: 
+### Excluded: 
 Annual billing charges (+334 days from service start to service end): predominantly monthly charges, adding annual distortions to consumption and revenue figures.
 State Island: insufficient monthly data for trend analysis
 FHA: not based on geographic borough, contained hundreds of developments with no clear geographic marker that would have taken a long time to assign.
@@ -124,7 +124,7 @@ FHA: not based on geographic borough, contained hundreds of developments with no
 
 
 
-##DASHBOARD
+## DASHBOARD
 
 Consumption Trends - Total consumption, active meters, and consumption per meter by borough. 
 
@@ -143,29 +143,29 @@ Consumption by Development - Select developments specifically to see more inform
 
 
 
-##Tools
+## Tools
 
 MySQL: Data cleaning and analytical queries.
 Power BI + DAX: Four-page interactive dashboard showing consumption trends, billing anomalies, revenue & rate and exploration by development. DAX measures to show rate
 
-Repository Structure
+## Repository Structure
 
-##How To Run
+## How To Run
 Download the NYCHA Water Consumption dataset from NYC Open Data and import into MySQL
 Run NYCWaterCleaning.sql to create the waterconsumption table
 Run NYCWaterRevenueAnalysis.sql and NYCWaterConsumptionAnalysis.sql to check for trends
 
-##Findings
+## Findings
 
-###Estimated billing of up to 47x the actual rate
+### Estimated billing of up to 47x the actual rate
 
 Manhattan July 2021 showed a 47 times larger estimated rate of $718.70/HCF against an actual rate of $15.29/HCF. One Manhattan development, UPACA, generated $312,511 in excess charges in a single month. The highest total excess charges of any development, Reid Apartments in Brooklyn, were systematically overbilled over 4 consecutive years.
 
-###Revenue remained stable despite falling consumption
+### Revenue remained stable despite falling consumption
 
 Despite falling consumption rates, total revenue remained stable due to increasing rates. The water rate per HCF rose 52% in Manhattan between 2014 and 2023. Rate spikes in 2021-22 can be attributed to estimated billing anomalies. Although consumption declined across all boroughs since 2013, Queens showed the steepest decline per meter.
 
-###January 2024 rate class transition caused redistribution of revenue percentages 
+### January 2024 rate class transition caused redistribution of revenue percentages 
 
 Rate classes were changed from Basic Water and Sewer to new MWW rate classes in January 2024. These changes caused individual developments to fluctuate in revenue. 
 Union Avenue (Bronx): -66% (-$149,298)
