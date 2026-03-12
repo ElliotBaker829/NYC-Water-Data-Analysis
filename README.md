@@ -110,18 +110,17 @@ GROUP BY Borough, RevenueYear
 ORDER BY Borough, RevenueYear;
 ```
 
+
 ## Dataset
 
 The data used is the NYCHA Water Consumption dataset from NYC Open Data, covering January 2023 to May 2025, it can be found [here](data/Water_Consumption_And_Cost_(2013_-_May_2025)_20260312.csv)
 
 
 ### Excluded: 
-Annual billing charges (+334 days from service start to service end): predominantly monthly charges, adding annual distortions to consumption and revenue figures.
-State Island: insufficient monthly data for trend analysis
-FHA: not based on geographic borough, contained hundreds of developments with no clear geographic marker that would have taken a long time to assign.
-2025: year not finished at the time of data collection, so could not accurately be used to compare with others
-
-
+* Annual billing charges (+334 days from service start to service end): predominantly monthly charges, adding annual distortions to consumption and revenue figures.
+* Staten Island: insufficient monthly data for trend analysis
+* FHA: not based on geographic borough, contained hundreds of developments with no clear geographic marker that would have taken a long time to assign.
+* 2025: year not finished at the time of data collection, so could not accurately be used to compare with others
 
 
 ## DASHBOARD
@@ -144,18 +143,20 @@ PDF version can be found [here](output/NYCWaterAnalysisPowerBIDashboard.pdf)
 * Consumption by Development - Select developments specifically to see more information on bill history, meter count and rate over time
 
 
-
 ## Tools
 
 *MySQL: Data cleaning and analytical queries.
 *Power BI + DAX: Four-page interactive dashboard showing consumption trends, billing anomalies, revenue & rate and exploration by development. DAX measures to show rate
 
+
 ## Repository Structure
+
 
 ## How To Run
 1. Download the NYCHA Water Consumption dataset from NYC Open Data and import into MySQL
 2. Run [NYCWaterCleaning.sql](code/NYCWaterCleaning.sql) to create the waterconsumption table
 3. Run [NYCWaterRevenueAnalysis.sql](code/NYCWaterRevenueAnalysis.sql) and [NYCWaterConsumptionAnalysis.sql](code/NYCWaterConsumptionAnalysis.sql) to check for trends
+
 
 ## Findings
 
