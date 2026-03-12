@@ -130,19 +130,21 @@ PDF version can be found [here](output/NYCWaterAnalysisPowerBIDashboard.pdf)
 
 * Consumption Trends - Total consumption, active meters, and consumption per meter by borough. 
 
-
+![consumption trends](images/ConsumptionAndMeter.png)
 
 
 * Billing Anomalies - Estimated vs. actual rate comparison, high charge events, excess charge by development
 
+![billing anomalies](images/BillingAnomalies.png)
 
 
 * Revenue & Rates - Water revenue trends, rate per consumption over time with a snapshot comparison of 2014, 2019, 2023 
 
-
+![revenue and rates](images/RevenueAndRates.png)
 
 * Consumption by Development - Select developments specifically to see more information on bill history, meter count and rate over time
 
+![consumption by development](images/ConsumptionByDevelopment.png)
 
 ## Tools
 
@@ -167,9 +169,15 @@ One page analysis can be found [here](output/NYCWaterAnalysisOnePageReport.pdf)
 
 Manhattan July 2021 showed a 47 times larger estimated rate of $718.70/HCF against an actual rate of $15.29/HCF. One Manhattan development, UPACA, generated $312,511 in excess charges in a single month. The highest total excess charges of any development, Reid Apartments in Brooklyn, were systematically overbilled over 4 consecutive years.
 
+![Manhattan table](images/ManhattanJuly2021.png)
+
 ### Revenue remained stable despite falling consumption
 
 Despite falling consumption rates, total revenue remained stable due to increasing rates. The water rate per HCF rose 52% in Manhattan between 2014 and 2023. Rate spikes in 2021-22 can be attributed to estimated billing anomalies. Although consumption declined across all boroughs since 2013, Queens showed the steepest decline per meter.
+
+![manhattan water rate per consumption increase](images/ManhattanWaterRatePerConsumption.png)
+
+![queens total consumption decline](images/QueensTotalConsumption.png)
 
 ### January 2024 rate class transition caused redistribution of revenue percentages 
 
