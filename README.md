@@ -115,6 +115,7 @@ ORDER BY Borough, RevenueYear;
 
 The data used is the NYCHA Water Consumption dataset from NYC Open Data, covering January 2023 to May 2025, it can be found [here](data/Water_Consumption_And_Cost_(2013_-_May_2025)_20260312.csv)
 
+![Dataset table](images/database.png)
 
 ### Excluded: 
 * Annual billing charges (+334 days from service start to service end): predominantly monthly charges, adding annual distortions to consumption and revenue figures.
@@ -145,8 +146,8 @@ PDF version can be found [here](output/NYCWaterAnalysisPowerBIDashboard.pdf)
 
 ## Tools
 
-*MySQL: Data cleaning and analytical queries.
-*Power BI + DAX: Four-page interactive dashboard showing consumption trends, billing anomalies, revenue & rate and exploration by development. DAX measures to show rate
+* MySQL: Data cleaning and analytical queries.
+* Power BI + DAX: Four-page interactive dashboard showing consumption trends, billing anomalies, revenue & rate and exploration by development. DAX measures to show rate
 
 
 ## Repository Structure
